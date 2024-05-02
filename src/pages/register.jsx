@@ -1,8 +1,10 @@
 import axios from "axios"
 import { useState } from "react"
 import { Container, Form, Button, InputGroup, Col, Row, ToastContainer, Toast } from "react-bootstrap"
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
+  const navigate = useNavigate()
   const [firstName, setFirstName] = useState('')
   const [middleName, setMiddleName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -195,6 +197,12 @@ function Register() {
                     variant="success">
                     Register
                   </Button>
+                </div>
+                <div className="d-flex justify-content-end mt-3">
+                  Already have an account?&nbsp;<span
+                    style={{cursor: 'pointer'}}
+                    onClick={() => navigate('/')}
+                    className="text-primary">Sign-in here</span>
                 </div>
               </Col>
             </Row>

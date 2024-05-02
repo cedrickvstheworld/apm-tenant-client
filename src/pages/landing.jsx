@@ -22,7 +22,8 @@ function Landing() {
       }
     }
     auth()
-  })
+  // eslint-disable-next-line
+  }, [])
   
   const handleSignIn = () => {
     axios.post(
@@ -67,6 +68,19 @@ function Landing() {
                   style={{cursor: 'pointer'}} 
                   id="password">{showHide}</InputGroup.Text>
               </InputGroup>
+              <div className="mb-1">
+                Don't have an account?&nbsp;<span
+                  style={{cursor: 'pointer'}}
+                  onClick={() => navigate('/register')}
+                  className="text-primary">register here</span>
+              </div>
+              <div className="mb-3">
+                <a
+                  href="forgot-password"
+                  style={{cursor: 'pointer', textDecoration: 'none'}}
+                  target="_blank"
+                  className="text-primary">forgot password?</a>
+              </div>
             </Form>
             <div className="d-flex justify-content-end">
               <Button onClick={handleSignIn} variant="primary">Sign In</Button>
